@@ -47,3 +47,34 @@ h1,h2{font-family:var(--round);font-weight:700}
 .block .social-photo{margin-top:24px}.block .performance{max-width:550px}.block .entrance{max-width:560px}
 .block .school-sign{display:flex;gap:15px;align-items:center}.school-sign img{width:130px;height:130px;flex-shrink:0;border-radius:16px}
 @media(max-width:700px){.art picture{inset:2% 12% 16% 0}.art .second{width:30%;height:30%}.intro-photo img{object-fit:cover}}
+
+/* Site navigation and photo features */
+header{border-bottom:1px solid #eee3df}
+.desktop{gap:clamp(12px,1.6vw,27px)}
+.notice,.home-album,.album-lead,.album-grid{padding-inline:max(7vw,calc((100vw - 1150px)/2))}
+.notice{background:#fff;border-block:1px solid var(--line);display:flex;align-items:baseline;gap:30px;padding-block:19px}
+.notice h2{font:700 16px/1.6 var(--round);white-space:nowrap}
+.notice a{text-decoration:none;font-size:16px}.notice a:last-child{margin-left:auto;font-size:14px}.notice span{background:#f7e7e9;color:#803c54;font-size:13px;padding:4px 10px;border-radius:20px;margin-right:10px}
+.notice i{color:var(--berry)}.notice a:hover,.album-pair a:hover span{text-decoration:underline}
+.home-album{background:#f4ece7;display:grid;grid-template-columns:1fr 1.8fr;align-items:center;gap:5vw;padding-block:64px}
+.album-text p,.album-lead p{margin-top:15px}.album-pair{display:grid;grid-template-columns:1.2fr 1fr;align-items:center;gap:18px}
+.album-pair a{text-decoration:none;font-weight:600}.album-pair img{display:block;object-fit:cover;width:100%;aspect-ratio:1.25;border-radius:18px}.album-pair a:first-child img{object-fit:contain}
+.album-pair span{display:block;margin-top:8px}.home-album .en,.album-lead .en{font-family:Georgia,serif;color:#905365}
+.footer-place{font-size:14px;margin-bottom:14px}.related{margin-top:16px}.wide.info{padding-block:36px}
+.album-lead{display:grid;grid-template-columns:1.25fr 1fr;gap:5%;align-items:center;background:#f7ede7;padding-block:42px}.album-lead>div{font-size:14px}.album-lead .en{font-size:clamp(30px,3.5vw,55px);margin:22px 0 3px}.album-lead h1{font-size:clamp(30px,3.6vw,54px);line-height:1.4}.album-lead p{font-size:16px}.album-lead>img{width:100%;max-height:300px;object-fit:cover;border-radius:58% 42% 35% 65% / 40% 46% 54% 60%}
+.album-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px 36px;margin-block:54px 72px}
+.album-entry{scroll-margin:20px}.album-entry h2{font-size:clamp(22px,2vw,30px);margin-top:17px}.album-entry p{margin-top:8px;max-width:36em}
+.enlarge{position:relative;display:grid;place-items:center;aspect-ratio:1.65;background:#f6efea;border-radius:22px;overflow:hidden}
+.enlarge img{width:100%;height:100%;object-fit:cover;min-height:0}.album-entry:first-child .enlarge img{object-fit:contain;padding:12px}
+.album-entry:last-child .enlarge{background:#edece4}.album-entry:last-child .enlarge img{width:min(55%,150px);height:auto;border-radius:8px}
+.enlarge span{position:absolute;right:12px;bottom:12px;background:#fff;color:#613f43;border-radius:50%;width:36px;text-align:center;font-size:24px;line-height:36px}
+#viewer{width:min(820px,94vw);max-height:92dvh;overflow:auto;border:0;border-radius:20px;padding:18px;background:#fffdfb;color:var(--ink)}
+#viewer::backdrop{background:rgba(43,32,31,.8)}.viewer-head,.viewer-foot{display:flex;align-items:center;justify-content:space-between;gap:10px}.viewer-image{display:block;width:auto;max-width:100%;height:auto;max-height:62dvh;margin:16px auto;object-fit:contain}
+#viewer button{font:inherit;font-size:15px;font-weight:600;background:white;color:var(--ink);border:1px solid var(--line);border-radius:24px;padding:6px 14px;cursor:pointer}#viewer button:hover{background:#f8eced}
+@media(max-width:700px){.desktop-break{display:none}.notice{flex-wrap:wrap;justify-content:space-between;padding-block:17px;gap:7px}.notice h2{font-size:15px}.notice a:first-of-type{order:3;width:100%}.notice a:last-child{font-size:13px}
+.home-album{display:block;padding-block:38px}.album-pair{margin-top:22px;gap:12px}.album-pair span{font-size:13px;line-height:1.55}.album-pair img{aspect-ratio:1.24}
+.album-lead{grid-template-columns:1fr;padding-block:18px 24px}.album-lead>img{margin-top:16px;height:135px;width:80%;justify-self:end}.album-lead .en{margin-top:12px}.album-grid{grid-template-columns:1fr;gap:32px;margin-block:28px 40px}
+.album-entry h2{margin-top:10px}.wide.info{padding-block:22px}.viewer-head strong{font-size:16px}}
+.hero-links{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;margin-top:25px}.hero-copy .hero-links .button{margin:0}.trial-link{background:var(--berry);color:#fff}.trial-link:hover{background:#81354d;color:white}.text-link{font-weight:bold;text-decoration:none;border-bottom:1px solid #b999a0}
+.topics{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}.topics a{background:#f5efea;color:var(--ink);text-decoration:none;border-radius:22px;padding:7px 14px;font-size:15px}.topics a:hover{background:#f3dfe4}.topics span{color:#884556}.teacher-profile{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}.block.teacher-profile figure{margin:0}
+@media(max-width:700px){.teacher-profile{grid-template-columns:1fr}.topics{gap:6px}.topics a{padding:5px 11px}.hero-links{gap:12px;margin-top:18px}.hero-links a{font-size:15px}}
