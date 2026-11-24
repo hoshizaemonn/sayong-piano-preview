@@ -346,7 +346,7 @@ html,.scrollpane { scroll-padding-top:128px; }
 
 /* A photographic title, a short introduction, then the page contents. */
 .page-banner {
-  --banner-image: url("img/keyboard.webp");
+  --banner-image: url("img/sayong-keys.webp");
   --banner-position: 50% 55%;
   position: relative;
   display: grid;
@@ -366,7 +366,8 @@ html,.scrollpane { scroll-padding-top:128px; }
 }
 .page-recital .page-banner { --banner-image: url("img/recital-facade.webp"); }
 .page-about .page-banner, .page-gallery .page-banner {
-  --banner-image: url("img/recital.webp");
+  --banner-image: url("img/lesson.webp");
+  --banner-position: center 68%;
 }
 .page-news .page-banner, .page-price .page-banner {
   --banner-image: url("img/lesson.webp");
