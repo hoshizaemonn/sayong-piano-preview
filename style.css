@@ -346,7 +346,6 @@ html,.scrollpane { scroll-padding-top:128px; }
 
 /* A photographic title, a short introduction, then the page contents. */
 .page-banner {
-  --banner-image: url("img/sayong-keys.webp");
   --banner-position: 50% 55%;
   position: relative;
   display: grid;
@@ -360,18 +359,69 @@ html,.scrollpane { scroll-padding-top:128px; }
   background-size: cover;
   background-position: center, var(--banner-position);
 }
-.page-course .page-banner, .page-rhythm .page-banner, .page-parents .page-banner, .page-trial .page-banner {
-  --banner-image: url("img/sayong-keys.webp");
-  --banner-position: center 41%;
+.page-about .page-banner {
+  --banner-image: url("img/header-about.webp");
+  --small-banner-image: url("img/header-about-sm.webp");
 }
-.page-recital .page-banner { --banner-image: url("img/recital-facade.webp"); }
-.page-about .page-banner, .page-gallery .page-banner {
-  --banner-image: url("img/lesson.webp");
-  --banner-position: center 68%;
+.page-course .page-banner {
+  --banner-image: url("img/header-course.webp");
+  --small-banner-image: url("img/header-course-sm.webp");
 }
-.page-news .page-banner, .page-price .page-banner {
-  --banner-image: url("img/lesson.webp");
-  --banner-position: center 53%;
+.page-rhythm .page-banner {
+  --banner-image: url("img/header-rhythm.webp");
+  --small-banner-image: url("img/header-rhythm-sm.webp");
+}
+.page-trial .page-banner {
+  --banner-image: url("img/header-trial.webp");
+  --small-banner-image: url("img/header-trial-sm.webp");
+}
+.page-parents .page-banner {
+  --banner-image: url("img/header-parents.webp");
+  --small-banner-image: url("img/header-parents-sm.webp");
+}
+.page-price .page-banner {
+  --banner-image: url("img/header-price.webp");
+  --small-banner-image: url("img/header-price-sm.webp");
+}
+.page-news .page-banner {
+  --banner-image: url("img/header-news.webp");
+  --small-banner-image: url("img/header-news-sm.webp");
+}
+.page-gallery .page-banner {
+  --banner-image: url("img/header-gallery.webp");
+  --small-banner-image: url("img/header-gallery-sm.webp");
+}
+.page-recital .page-banner {
+  --banner-image: url("img/header-recital.webp");
+  --small-banner-image: url("img/header-recital-sm.webp");
+}
+.page-access .page-banner {
+  --banner-image: url("img/sayong-sign.webp");
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #635b5d;
+  background-image: var(--banner-image);
+}
+.page-access .page-banner::before {
+  content: ""; position: absolute; z-index: -2; inset: -22px;
+  background: linear-gradient(100deg, #d3c8bf66, #39383caa 48%, #8e7b7866), var(--banner-image) center 33% / cover;
+  filter: blur(16px);
+}
+.page-access .page-banner::after {
+  content: ""; position: absolute; z-index: -1;
+  right: max(9%, calc((100% - 960px) / 2)); top: 50%;
+  width: clamp(84px, 13vw, 150px); aspect-ratio: 1; transform: translateY(-50%);
+  background: var(--banner-image) center / cover;
+  border: 4px solid #fcfaf7; box-shadow: 0 6px 24px #231d232e;
+}
+@media (max-width: 700px) {
+  .inside .page-banner { --banner-image: var(--small-banner-image); }
+  .page-access .page-banner { --small-banner-image: url("img/sayong-sign.webp"); }
+  .page-access .page-banner::after { right: 4%; }
+}
+.banner-photo-note {
+  position: absolute; right: 4%; bottom: 14px; padding: 2px 7px;
+  color: white; background: rgb(28 36 41 / 62%); border-radius: 3px; font-size: 12px;
 }
 .banner-heading span, .fee-heading span, .voice-heading span {
   display: block;
