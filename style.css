@@ -462,3 +462,46 @@ html,.scrollpane { scroll-padding-top:128px; }
 }
 
 .voice-grid blockquote span { display: inline-block; }
+
+/* The school guide pairs one story with one photograph at a time. */
+.about-guide {
+  padding: clamp(24px, 4vw, 58px) max(5%, calc((100% - 1100px) / 2));
+  display: grid; gap: clamp(22px, 3vw, 44px);
+  background: linear-gradient(150deg, #faf9fa, #f6f4f4 60%, #faf9fa);
+}
+.about-panel {
+  display: grid; grid-template-columns: 1.1fr 1fr; align-items: center;
+  gap: clamp(24px, 4vw, 64px); padding: clamp(25px, 4vw, 56px);
+  background: white; border: 1px solid var(--hairline); border-radius: 6px;
+}
+.about-teacher { grid-template-columns: 1fr 1.1fr; }
+.about-teacher .about-photo { grid-column: 1; grid-row: 1; }
+.about-teacher .about-copy { grid-column: 2; grid-row: 1; }
+.about-copy h2, .about-location h2 {
+  margin: 0 0 20px; color: #873e5b; font: 600 clamp(24px, 2.35vw, 35px)/1.5 var(--serif); letter-spacing: .05em;
+}
+.about-copy p { margin: 0; line-height: 1.95; }
+.about-copy p + p { margin-top: 12px; }
+.about-photo { margin: 0; }
+.about-photo img {
+  display: block; width: 100%; aspect-ratio: 1.26; height: auto; object-fit: cover;
+  mask-image: radial-gradient(ellipse 70% 76% at 50% 50%, #000 48%, transparent 85%);
+}
+.about-teacher .about-photo img { object-fit: contain; aspect-ratio: 1.24; mask-image: none; }
+.about-photo figcaption { text-align: center; font-size: 13px; color: #665960; }
+.about-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 22px; }
+.about-links a { font-size: 14px; color: #774055; }
+.about-links .about-button {
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 18px;
+  padding: 9px 18px; border-radius: 100px; color: #70344b; background: #f6e9ee; text-decoration: none; font-weight: 600;
+}
+.about-links .about-button:hover { background: #efdae3; text-decoration: underline; }
+.about-location { max-width: 776px; margin: auto; padding: clamp(38px, 5vw, 70px) 6%; box-sizing: content-box; }
+.about-location .studio-facts { max-width: none; }
+@media (max-width: 760px) {
+  .about-panel, .about-teacher { grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 20px; }
+  .about-teacher .about-copy, .about-teacher .about-photo { grid-column: auto; grid-row: auto; }
+  .about-photo, .about-teacher .about-photo { grid-row: 1; }
+  .about-photo img, .about-teacher .about-photo img { width: min(100%, 420px); max-height: 220px; aspect-ratio: 1.92; margin: auto; }
+  .about-copy h2 { margin-bottom: 12px; }
+}
