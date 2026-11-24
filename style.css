@@ -343,3 +343,121 @@ html,.scrollpane { scroll-padding-top:128px; }
  .welcome .message-type { font-size:clamp(38px,9.1vw,64px); }
  .welcome figure { width:min(90%,350px); margin:12px auto 0; }
 }
+
+/* A photographic title, a short introduction, then the page contents. */
+.page-banner {
+  --banner-image: url("img/keyboard.webp");
+  --banner-position: 50% 55%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: clamp(238px, 25vw, 370px);
+  padding: 44px 6% 62px;
+  color: white;
+  text-align: center;
+  background-color: #58666a;
+  background-image: linear-gradient(100deg, rgb(212 225 221 / 56%), rgb(64 77 80 / 66%) 43%, rgb(64 77 80 / 65%) 57%, rgb(211 220 215 / 52%)), var(--banner-image);
+  background-size: cover;
+  background-position: center, var(--banner-position);
+}
+.page-course .page-banner, .page-rhythm .page-banner, .page-parents .page-banner, .page-trial .page-banner {
+  --banner-image: url("img/sayong-keys.webp");
+  --banner-position: center 41%;
+}
+.page-recital .page-banner { --banner-image: url("img/recital-facade.webp"); }
+.page-about .page-banner, .page-gallery .page-banner {
+  --banner-image: url("img/recital.webp");
+}
+.page-news .page-banner, .page-price .page-banner {
+  --banner-image: url("img/lesson.webp");
+  --banner-position: center 53%;
+}
+.banner-heading span, .fee-heading span, .voice-heading span {
+  display: block;
+  font: italic 400 clamp(44px, 5.3vw, 82px)/1.06 Georgia, serif;
+  letter-spacing: -.045em;
+}
+.banner-heading h1 {
+  font: 600 clamp(19px, 2vw, 30px)/1.55 var(--round);
+  letter-spacing: .11em;
+  margin: 14px 0 0;
+}
+.banner-trail {
+  position: absolute;
+  left: max(6%, calc((100% - 1080px)/2)); bottom: 14px;
+  display: flex; align-items: center; gap: 9px;
+  padding: 2px 9px;
+  font-size: 13px; border-radius: 3px;
+  background: rgb(28 36 41 / 60%);
+}
+.banner-trail a:hover { color: white; }
+.banner-intro { margin: 34px auto 0; width: min(88%, 760px); text-align: center; line-height: 2; }
+.banner-intro .primary-lesson { margin-top: 12px; }
+.page-trial .visit-intro { grid-template-columns: minmax(0, 1fr) 185px; }
+.page-trial .visit-intro > div { grid-row: span 2; }
+.page-trial .visit-intro figure { padding: 10px; }
+.page-trial .visit-intro figure + figure { margin-top: 12px; }
+.page-trial .visit-intro figure + figure img { width: 100%; }
+
+.fee-guide { max-width: 940px; padding: clamp(40px, 6vw, 84px) max(5%, 22px) 60px; box-sizing: content-box; }
+.fee-prologue, .fee-note { text-align: center; }
+.fee-heading { width: min(100%, 420px); margin: 0 auto 24px; padding: 20px 0; border-block: 1px solid #cdbfc6; }
+.fee-heading span { color: #864761; font-size: clamp(32px, 4vw, 52px); }
+.fee-heading h2 { margin: 6px 0 0; font-size: 19px; }
+.fee-prologue figure { margin: 26px auto 0; max-width: 700px; }
+.fee-prologue img {
+  display: block; width: 100%; height: clamp(155px, 24vw, 285px); object-fit: cover; object-position: 50% 42%;
+  mask-image: radial-gradient(ellipse 66% 77% at 50% 50%, black 48%, transparent 85%);
+}
+.fee-guide .topics { justify-content: center; margin: 18px 0 0; }
+.fee-section { padding-top: clamp(30px, 5vw, 58px); }
+.fee-guide table { margin: 0; table-layout: fixed; background: white; }
+.fee-guide caption { padding-bottom: 18px; font: 600 clamp(21px, 2.25vw, 31px)/1.5 var(--serif); }
+.fee-guide th, .fee-guide td {
+  border-bottom: 1px solid #e6e4e5; padding: 15px 12px; text-align: center; white-space: normal;
+}
+.fee-guide thead th { background: #d9e9e8; color: #304b51; border-top: 2px solid #9cbdbc; }
+.fee-guide tbody th { background: white; color: var(--ink); font-weight: 600; }
+.fee-guide td strong, .fee-guide td a { color: #96375b; }
+.fee-guide #topic-1 th:last-child { width: 24%; }
+.fee-guide #topic-2 th:first-child { width: 39%; }
+.fee-note { margin-top: clamp(45px, 6vw, 82px); padding: clamp(22px, 4vw, 40px); background: var(--mist); border: 1px solid var(--hairline); }
+.fee-note h2 { color: #8d425d; font-size: clamp(20px, 2vw, 28px); }
+.fee-note p { max-width: 38em; margin: 15px auto; text-align: left; }
+.fee-note div { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 24px; }
+.fee-note .primary-lesson { margin: 0; }
+
+.studio-voices {
+  padding: clamp(44px, 6vw, 94px) 6%;
+  background: linear-gradient(100deg, rgb(252 247 243 / 90%), rgb(249 247 245 / 84%) 55%, rgb(242 231 227 / 77%)), url("img/sayong-keys.webp") center 42% / cover;
+}
+.voice-inner { max-width: 960px; margin: auto; }
+.voice-heading { text-align: center; }
+.voice-heading span { color: #904e65; font-size: clamp(44px, 4.4vw, 69px); }
+.voice-heading h2 { margin: 4px 0 14px; font-size: clamp(22px, 2.1vw, 31px); }
+.voice-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(18px, 3vw, 38px); margin-top: 30px; }
+.voice-grid figure {
+  display: flex; flex-direction: column; margin: 0; padding: clamp(22px, 3vw, 38px);
+  background: #fffefd; border: 1px solid #e7dcdb; border-top: 3px solid #b37b8c;
+  box-shadow: 0 6px 20px rgb(62 48 49 / 5%);
+}
+.voice-grid figure + figure { border-top-color: #83a3a3; }
+.voice-grid figcaption { color: #70585e; font-size: 14px; }
+.voice-grid blockquote { margin: 16px 0 25px; }
+.voice-grid blockquote p { font: 500 clamp(20px, 1.8vw, 27px)/1.75 var(--serif); }
+.voice-grid a { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--hairline); color: #87445b; font-size: 14px; }
+@media (max-width: 700px) {
+  .page-banner { min-height: 210px; }
+  .banner-intro { margin-top: 22px; text-align: left; }
+  .page-trial .visit-intro { grid-template-columns: 1fr; }
+  .page-trial .visit-intro > div { grid-row: auto; }
+  .page-trial .visit-intro figure + figure { margin-top: 0; }
+  .page-trial .visit-intro figure + figure img { width: 92px; }
+  .fee-guide .topics { gap: 6px; }
+  .fee-guide .topics a { font-size: 13px; }
+  .fee-guide th, .fee-guide td { padding: 12px 6px; font-size: 14px; }
+  .voice-grid { grid-template-columns: 1fr; }
+  .voice-grid blockquote { margin-bottom: 16px; }
+}
+
+.voice-grid blockquote span { display: inline-block; }
